@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 
 import { HomePage } from "./components/HomePage";
+import { TopBar, DEFAULT_BUTTONS } from "./components/TopBar";
 
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="container">
-      {/* <Title texts={DEFAULT_TEXTS} themeProps={themeProps} />
-      <NavBar pages={DEFAULT_PAGES} /> */}
+      <TopBar title={"Example Updatable Site"} buttons={DEFAULT_BUTTONS} />
 
       <div style={{ paddingTop: "2em", maxWidth: "95%" }}>
         <Routes>
