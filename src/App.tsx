@@ -21,7 +21,7 @@ export const App = () => {
       <div style={{ paddingTop: "2em", maxWidth: "95%" }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<DynamicContent />} />
+          <Route path="/search" element={<DynamicContent searchText={searchText} />} />
         </Routes>
       </div>
     </div>
