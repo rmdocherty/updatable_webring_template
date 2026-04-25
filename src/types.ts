@@ -5,6 +5,7 @@ export type BookTypes = (typeof bookTypes)[number];
 
 // Our types we'll use in the components
 export type Book = {
+  id: number;
   name: string;
   author: string;
   year: number;
@@ -15,6 +16,7 @@ export type Book = {
 // Our zod schemas we'll use to validate the json data in content
 // They should match our types 1-1
 export const BookSchema = z.object({
+  id: z.number(),
   name: z.string(),
   author: z.string(),
   year: z.number(),
