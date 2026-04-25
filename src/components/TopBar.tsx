@@ -1,5 +1,5 @@
 import { ReactNode, FC } from "react";
-import "../styles.css";
+import "../styles/styles.css";
 
 type TopBarButton = {
   text: string;
@@ -29,7 +29,7 @@ export const TopBar: FC<TopBarProps> = ({ title, SearchComponent, buttons }) => 
     <div className="topbar-root">
       <div className="topbar-row">
         <div className="topbar-title-search">
-          <span className="topbar-title">{title}</span>
+          <h2>{title}</h2>
           {SearchComponent && <span>{SearchComponent}</span>}
         </div>
         <div className="topbar-buttons-grid">

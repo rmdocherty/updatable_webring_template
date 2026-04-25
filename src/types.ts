@@ -1,22 +1,25 @@
 import * as z from "zod/mini";
 
+const bookTypes = ["classic", "non-fiction", "sci-fi", "horror"] as const;
+export type BookTypes = (typeof bookTypes)[number];
+
 // Our types we'll use in the components
-export type Example = {
+export type Book = {
   name: string;
-  isCurrent: boolean;
+  author: string;
+  year: number;
+  url: string;
+  type: BookTypes;
 };
 
 // Our zod schemas we'll use to validate the json data in content
 // They should match our types 1-1
-
-const OutLinkSchema = z.object({
-  text: z.string(),
-  link: z.string(),
-});
-
-export const ExampleSchema = z.object({
+export const BookSchema = z.object({
   name: z.string(),
-  isCurrent: z.boolean(),
+  author: z.string(),
+  year: z.number(),
+  url: z.string(),
+  type: z.enum(bookTypes),
 });
 
 // We need to define our own interface (i.e behaviours $schema will have) because zod mini removes the ZodSchema type
