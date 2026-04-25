@@ -1,0 +1,64 @@
+:root {
+  --secondary: #f5a418;
+  --secondary-hover: #f3b13e;
+  --outline-grey: #ababab;
+  --bg: #fafafa;
+  --bg-dark: #111;
+  --text-black: #111;
+  --text-white: #fafafa;
+  --normal-text-size: 1.3em;
+  --small-text-size: 1.1em;
+  --navbar-text-size: 1.7em;
+  --h1-size: 2.2em;
+  --h2-size: 1.6em;
+  --h3-size: 1.4em;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --normal-text-size: 1em;
+    --small-text-size: 1em;
+    --navbar-text-size: 1.3em;
+    --h1-size: 2em;
+    --h2-size: 1.5em;
+    --h3-size: 1.3em;
+    --title-spacing: 1.4;
+  }
+}
+
+body,
+.container {
+  font-family: "Segoe UI", "Arial", "Helvetica", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--text-color);
+}
+
+p {
+  font-size: var(--normal-text-size);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--h1-size);
+  min-height: calc(var(--title-spacing) * var(--h1-size));
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+ul {
+  font-size: var(--normal-text-size);
+  line-height: 1.5;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
