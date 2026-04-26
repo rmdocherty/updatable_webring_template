@@ -1,7 +1,7 @@
 name: Spreadsheet Sync Trigger Test
 
 on:
-  repository_dispatch:
+  workflow_dispatch:
     types: [spreadsheet_update]
 
 jobs:
