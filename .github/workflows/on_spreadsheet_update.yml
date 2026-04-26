@@ -1,0 +1,12 @@
+name: Spreadsheet Sync Trigger Test
+
+on:
+  repository_dispatch:
+    types: [spreadsheet_update]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Acknowledge Trigger
+        run: echo "hello_world"
