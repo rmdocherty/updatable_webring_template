@@ -10,11 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Fetch and checkout latest main
-        run: |
-          git fetch origin main
-          git checkout main
-          git reset --hard origin/main
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -25,7 +20,9 @@ jobs:
 
       - name: Create update branch
         run: |
-          BRANCH_NAME="update-$(date +'%Y%m%d')"
+          DATE_STR=$(date +'%Y%m%d')
+          TS_HASH=$(date +%s)
+          BRANCH_NAME="update-${DATE_STR}-${TS_HASH}"
           git checkout -b "$BRANCH_NAME"
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
