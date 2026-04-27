@@ -1,5 +1,5 @@
 # updatable_webring_template
-MVP for a 'webring' - structured set of links to other (scientific) data - which can be updated (new content added + site rebuilt) via some external source (in this case, google sheets).
+MVP for a 'webring' - structured set of links to other (scientific) data - which can be updated (new content added + site rebuilt) via some external source (in this case, google sheets). Basically, it's a static site with a google sheets CMS.
 
 
 
@@ -60,3 +60,9 @@ jobs:
         run: echo "hello_world"
 ```
 4. Add some button / way of running the script to your spreadsheet
+5. 
+
+To run this locally,
+```bash
+yarn tsx scripts/paresSheet.ts GOOGLE_SHEET_URL
+```

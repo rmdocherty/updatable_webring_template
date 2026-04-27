@@ -38,5 +38,13 @@
     "year": 1851,
     "url": "https://www.gutenberg.org/ebooks/2701",
     "type": "classic"
+  },
+  {
+    "id": 6,
+    "name": "Dracula",
+    "author": "Bram Stoker",
+    "year": 1897,
+    "url": "https://www.gutenberg.org/ebooks/345",
+    "type": "horror"
   }
 ]
