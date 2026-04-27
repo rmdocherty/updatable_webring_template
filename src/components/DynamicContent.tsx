@@ -36,7 +36,7 @@ export const DynamicContent = ({ searchText }: { searchText: string }) => {
           ))}
       </div>
       <p>
-        <a href="/">Go back</a>
+        <a href="">Go back</a>
       </p>
     </div>
   );

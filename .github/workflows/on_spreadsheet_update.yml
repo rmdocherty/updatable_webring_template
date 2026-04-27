@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Fetch and checkout latest main
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
