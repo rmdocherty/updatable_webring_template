@@ -5,7 +5,7 @@ on:
     types: [spreadsheet_update]
 
 jobs:
-  ping:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -2,8 +2,11 @@
 MVP for a 'webring' - structured set of links to other (scientific) data - which can be updated (new content added + site rebuilt) via some external source (in this case, google sheets). Basically, it's a static site with a google sheets CMS.
 
 
+## Warnings:
+- This assumes your spreadsheet is viewable by anyone with the link - I've structured it this way because I don't care too much about the contents of the spreadsheet. If this is important to you, set up a Google cloud service worker and use that (and keep the spreadsheet private).
+- Keep the spreadsheet view-only with link, otherwise users could spam the update button.
 
-## Instructions to get updates working:
+## Instructions:
 
 1. Create a fine-grained PAT (scoped ONLY to your repo) that actions read/write permissions.
 2. Add this script to an AppScript file associated with your google sheets, where GITHUB_TOKEN is the PAT you just generated
@@ -21,10 +24,6 @@ function triggerGithubAction() {
 
   const payload = {
     ref: BRANCH
-    // optionally:
-    // inputs: {
-    //   key: "value"
-    // }
   };
 
   const options = {
@@ -44,25 +43,38 @@ function triggerGithubAction() {
   Logger.log(response.getContentText());
 }
 ```
-3. Add a workflow file to `.github/workflows/on_spreadsheet_update.yml`
-```
-name: Spreadsheet Sync Trigger Test
+3. Add some button / way of running the script to your spreadsheet - typically this is `Insert Drawing>*draw something*>Assign Script`
+4. Trigger the workflow by editing the spreadsheet and pressing the button - this should trigger a gihtuh action that, if it passes, should open a Pull Request into the repo
+5. Merge the pull request to triger the Build and Deploy acitons - if they pass, the changes should be live!
 
-on:
-  workflow_dispatch:
-    types: [spreadsheet_update]
 
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Acknowledge Trigger
-        run: echo "hello_world"
-```
-4. Add some button / way of running the script to your spreadsheet
-5. 
 
-To run this locally,
+## Local install:
+
+
+1. install `nvm` & `yarn`
+
 ```bash
-yarn tsx scripts/paresSheet.ts GOOGLE_SHEET_URL
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+nvm install 24
+npm install --global yarn
+```
+
+2. install packages from root directory:
+
+```bash
+yarn install
+```
+
+3. run frontend
+
+```bash
+cd src/
+yarn start
+```
+
+
+To run spreadsheet download & parsing locally,
+```bash
+yarn tsx scripts/parseSheet.ts GOOGLE_SHEET_URL
 ```
