@@ -10,7 +10,7 @@ export const SearchElement: FC<SearchProps> = ({ searchText, setSearchText }) =>
   const navigate = useNavigate();
 
   const onBrowseAll = () => {
-    navigate("/search");
+    navigate("search");
   };
 
   return (
