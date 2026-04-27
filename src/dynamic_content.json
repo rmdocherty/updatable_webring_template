@@ -54,5 +54,13 @@
     "year": 1861,
     "url": "https://www.gutenberg.org/ebooks/550",
     "type": "classic"
+  },
+  {
+    "id": 8,
+    "name": "Foo bar",
+    "author": "Baz",
+    "year": 1861,
+    "url": "https://www.gutenberg.org/ebooks/550",
+    "type": "classic"
   }
 ]
