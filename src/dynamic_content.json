@@ -46,5 +46,13 @@
     "year": 1897,
     "url": "https://www.gutenberg.org/ebooks/345",
     "type": "horror"
+  },
+  {
+    "id": 7,
+    "name": "Silas",
+    "author": "Marner",
+    "year": 1861,
+    "url": "https://www.gutenberg.org/ebooks/550",
+    "type": "classic"
   }
 ]
